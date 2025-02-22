@@ -44,4 +44,20 @@ The script generates two CSV output files:
 - `tag_counts_for<lookup_table_filename>_and_<input_file_filename>.csv`: Contains tag counts with columns `Tag, Count`
 - `port_protocol_counts_for<lookup_table_filename>_and_<input_file_filename>.csv`: Contains counts for port, protocol combination with columns `Port, Protocol, Count`
 
+## Tests
+- Input file with rows that don't have exactly 14 fields should not consider those rows
+- No matter what dstPort and protocol numbers are given, the sum of both output count files should sum up to be the same (the number of valid rows)
+- Multiple occurences of the same (dstPort, protocol) should be accounted for
+- Rows with invalid protocol numbers are skipped
+- Empty input file
+- Example Input Files Used for Testing:
+    - exampleInput.txt
+    - exampleInput2.txt
+    - exampleInput3.txt
+    - exampleInput4.txt
+- Example Lookup Tables Used for Testing:
+    - exampleLookupTable.csv
+    - exampleLookupTable2.csv
+    - exampleLookupTable3.csv
+
 

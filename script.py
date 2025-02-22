@@ -77,7 +77,8 @@ def processFlowLogs(filepath, lookup):
                     
         # generate "Untagged" count for the tagCounts map
         totalTagged = sum(tagCounts.values())
-        tagCounts["Untagged"] = totalInputs - totalTagged
+        if totalInputs > 0:
+            tagCounts["Untagged"] = totalInputs - totalTagged
 
         return tagCounts, keyCounts
     
